@@ -13,7 +13,7 @@ const getUserDetails = () => {
 export const useUserDetails = () => {
     const [userDetails, setUserDetails] = useState(getUserDetails())
     const logout = () => {
-        logoutHandler
+        logoutHandler()
     }
 
     return {

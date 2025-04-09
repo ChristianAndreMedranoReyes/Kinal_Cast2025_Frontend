@@ -26,3 +26,26 @@ export const register = async(data) => {
         }
     }
 }
+
+export const channels = async(data) => {
+    try {
+        return await apiClient.get('/channels')
+    } catch (e) {
+        return {
+            error: true,
+            e
+        }
+    }
+}
+
+export const getFollowedChannels = async () => {
+    try {
+        return await apiClient.get('/channels/followed')
+    } catch (error) {
+        checkResponseStatus(e)
+        return {
+            error: true,
+            e
+        }
+    }
+}

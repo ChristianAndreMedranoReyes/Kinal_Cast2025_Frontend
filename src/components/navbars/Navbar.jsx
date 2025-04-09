@@ -1,6 +1,5 @@
-export { useNavigate } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
-import logo from '../../assets/img/LogoFundacionKinal.jpg';
+import logo from '../../assets/img/images.png';
 import { useUserDetails } from "../../shared/hooks";
  
 const NavLogo = () => {
@@ -17,9 +16,9 @@ const NavLogo = () => {
     )
 }
  
-const NavButton = ({text, onclickHandler}) => {
+const NavButton = ({text, onClickHandler}) => {
     return(
-        <span className="nav-button" onClick={onclickHandler}>
+        <span className="nav-button" onClick={onClickHandler}>
             {text}
         </span>
     )
@@ -50,13 +49,13 @@ export const Navbar = () => {
         <div className="nav-container">
             <NavLogo />
             <div className="nav-buttons-container">
-                <NavButton text="Browse" onclickHandler={handleNavigateToChannelsPage} />
+                <NavButton text="Browse" onClickHandler={handleNavigateToChannelsPage} />
                 {!isLogged ? (
-                    <NavButton text="Login" onclickHandler={handleNavigateToAuthPage}/>
+                    <NavButton text="Login" onClickHandler={handleNavigateToAuthPage}/>
                 ) : (
                     <div>
-                        <NavButton text="My Account" onclickHandler={handleNavigateToSettingPage}/>
-                        <NavButton text="Logout" onclickHandler={handleLogout}/>
+                        <NavButton text="My Account" onClickHandler={handleNavigateToSettingPage}/>
+                        <NavButton text="Logout" onClickHandler={handleLogout}/>
                     </div>
                 )}
             </div>
