@@ -1,4 +1,8 @@
-export { useLogin } from './useLogin.jsx'
-export { useRegister } from './useRegister.jsx'
-export { useUserDetails } from './useUserDetails.jsx'
-export { logout } from './userLogout.jsx'
+export { useLogin } from './useLogin';
+export { useRegister } from './useRegister'
+export { logout } from './userLogout'
+export { useUserDetails } from './useUserDetails'
+export { useChannelSettings } from './useChangeSettings'
+export { useChangePassword } from './useChangePassword'
+export { useChannelDetails } from './useChannelDetails'
+export { useFollowChannel } from ''

@@ -4,14 +4,14 @@ import { Input } from './Input';
 import {
     emailValidationMessage,
     validateEmail,
-    passwordValidationMessage,
+    validatePasswordMessage,
     validatePassword
 } from '../shared/validators';
 import { useLogin } from '../shared/hooks'
- 
+
 export const Login = ({ switchAuthHandler }) => {
     const { login, isLoading } = useLogin();
- 
+
     const [formState, setFormState] = useState({
         email: {
             value: '',
@@ -24,7 +24,7 @@ export const Login = ({ switchAuthHandler }) => {
             showError: false
         }
     });
- 
+
     const handleInputValueChange = (value, field) => {
         setFormState((prevState) => ({
             ...prevState,
@@ -34,7 +34,7 @@ export const Login = ({ switchAuthHandler }) => {
             }
         }));
     }
- 
+
     const handleInputValidationOnBlur = (value, field) => {
         let isValid = false;
         switch (field) {
@@ -56,14 +56,14 @@ export const Login = ({ switchAuthHandler }) => {
             }
         }));
     }
- 
+
     const handleLogin = (event) => {
         event.preventDefault();
         login(formState.email.value, formState.password.value);
     }
- 
+
     const isSubmitButtonDisable = isLoading || !formState.email.isValid || !formState.password.isValid;
- 
+
     return (
         <div className="login-container">
             <Logo text={'Login Kinal Cast'} />
@@ -86,7 +86,7 @@ export const Login = ({ switchAuthHandler }) => {
                     type='password'
                     onBlurHandler={handleInputValidationOnBlur}
                     showErrorMessage={formState.password.showError}
-                    validationMessage={passwordValidationMessage}
+                    validationMessage={validatePasswordMessage}
                 />
                 <button onClick={handleLogin} disabled={isSubmitButtonDisable}>
                     Log in
